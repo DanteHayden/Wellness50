@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a task
+{% endblock %}
+
+{% block main %}
+    <form action="/createTask" method="post">
+        <input autocomplete="off" class="form-control mx-auto w-auto" id="create-task" name="create-task" placeholder="Add a new task" type="text">  
+        <button class="btn btn-light" type="submit">Create!</button>
+    </form>
+    <button class="nav-item"><a class="nav-link" href="/taskManager">Go back</a></button>
+{% endblock %}

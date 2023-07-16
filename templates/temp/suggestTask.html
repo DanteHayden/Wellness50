@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Task Suggestions
+{% endblock %}
+
+{% block main %}
+    {% for task in tasks %}
+        <div class="task-container">                
+            <li class="task">{{task.task}}</li>
+            <br>
+        </div>
+    {% endfor %}
+    <button class="nav-item"><a class="nav-link" href="/taskManager">Go back</a></button>
+{% endblock %}

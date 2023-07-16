@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tasks
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Task</th>
+                <th class="text-end">Completed</th>
+            </tr>
+            <tbody>
+                
+        </thead>
+        <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td class="text-start">{{ task.task }}</td>
+                        <td class="text-end">{{ task.complete }}</td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+    <form action="/resetTask" method="post">
+        <button type="submit">Reset all tasks</button>
+    </form>
+    <button class="nav-item"><a class="nav-link" href="/taskManager">Go back</a></button>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="container text-center">
+  <table class="table">
+    <table class="table">
+      <thead>
+          <tr>
+              <th class="text-start">Task</th>
+              <th class="text-end">Completed</th>
+          </tr>  
+      </thead>
+      <tbody>
+              {% for task in tasks %}
+                  <tr>
+                      <td class="text-start">{{ task.task }}</td>
+                      <td class="text-end">{{ task.complete }}</td>
+                  </tr>
+              {% endfor %}
+      </tbody>
+    </table>
+  </table>
+</div>
+    <br> <br>
+<p>
+    <a class="btn btn-light" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Create a task</a>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Task suggestions</button>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Complete a task</button>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Reset all tasks</button>
+    <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">Delete a tasks</button>
+    
+
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+            <form action="/createTask" method="post">
+                <input autocomplete="off" class="form-control mx-auto w-auto" id="create-task" name="create-task" placeholder="Add a new task" type="text">  
+                <button class="btn btn-light" type="submit">Create!</button>
+            </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+          {% for task in taskSuggestion %}
+            <div class="task-container">                
+                <li class="task">{{task.task}}</li>
+                <br>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample3">
+          <div class="card card-body">
+            <form action="/completeTask" method="post">
+                <select class="form-select mx-auto w-auto" name="confirm-task">
+                    <option disabled selected> Select a task </option>
+                    {% for task in tasks %}
+                        <option > {{task.task}} </option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-light" type="submit">Complete It!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample4">
+          <div class="card card-body">
+            <form action="/resetTask" method="post">
+              <button class="btn btn-light" type="submit">Reset every task</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample5">
+          <div class="card card-body">
+            <form action="/deleteTask" method="post">
+                <select class="form-select mx-auto w-auto" name="delete-task">
+                    <option disabled selected> Delete a task </option>
+                    {% for task in tasks %}
+                        <option id="{{task.taskId}}"> {{task.task}} </option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-light" type="submit">🗑</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        {% endblock %}

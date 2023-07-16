@@ -1,0 +1,114 @@
+/* Most of the UI sauce is done by bootstrap itself
+   here are just some few adjustments and a nice looking
+   spinning gradient to give a professional look to the 
+   website */ 
+
+:root {
+    --bg-color: #ffffff00
+}
+
+body {
+    background-color: rgb(26, 30, 37);
+    color: #9b9d9e;
+}
+
+thead {
+    color: #9b9d9e;
+}
+
+tbody {
+    color: #9b9d9e;
+}
+
+main {
+    background-color: var(--bg-color);
+}
+
+h1 {
+    color: #9b9d9e;
+}
+  
+div {
+    color: #9b9d9e;
+}
+
+nav .nav-item {
+    color: #9b9d9e;
+}
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+.task-container {
+    margin: 10px;
+}
+
+.task {
+    float: left; 
+    display: inline-block; 
+}
+
+.delete-task {
+    float: middle; 
+}
+
+.card {
+    background-color: var(--bg-color);
+    color: #9b9d9e
+}
+
+.btn {
+    background-color: var(--bg-color);
+    color: #9b9d9e;
+    margin: 10px;
+}
+
+#navbar {
+    background-color: var(--bg-color)
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+/* idea adapted from hyperplexed https://codepen.io/Hyperplexed/pen/KKBjvbG */
+
+#background-ball {
+    background-color: white;
+    height: 250%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    background: linear-gradient(to right, rgb(96, 253, 117), rgb(88, 103, 236));
+    opacity: 0.2;
+    animation: rotation 20s infinite linear;
+    pointer-events: none;
+}

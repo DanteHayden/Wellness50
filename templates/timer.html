@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Timer
+{% endblock %}
+
+{% block main %}
+    <div>
+        <iframe frameborder="0" noresize="noresize"  src="{{ url_for('timer')}}"></iframe>
+    </div>
+{% endblock %}
+
+

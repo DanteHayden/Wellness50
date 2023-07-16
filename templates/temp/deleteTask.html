@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete a task
+{% endblock %}
+
+{% block main %}
+    <form action="/deleteTask" method="post">
+        <select class="form-select mx-auto w-auto" name="delete-task">
+            <option disabled selected> Delete a task </option>
+            {% for task in tasks %}
+                <option id="{{task.taskId}}"> {{task.task}} </option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-light" type="submit">🗑</button>
+    </form>
+    <button class="nav-item"><a class="nav-link" href="/taskManager">Go back</a></button>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Diary!
+{% endblock %}
+
+{% block main %}
+    <form action="/diary" method="post">
+        <input autocomplete="off" class="form-control mx-auto w-auto" id="new-entry" name="new-entry" placeholder="Start writing here">  
+        <button class="btn btn-light" type="submit">Add entry</button>
+    </form>
+    <div class="container text-center">
+        <table class="table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-start">Entry</th>
+                        <th class="text-end">Date</th>
+                    </tr>
+                    <tbody>   
+                </thead>
+                <tbody>
+                        {% for entry in diary %}
+                            <tr>
+                                <td class="text-start">{{ entry.entry }}</td>
+                                <td class="text-end">{{ entry.date }}</td>
+                            </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </table>
+    </div>
+{% endblock %}
