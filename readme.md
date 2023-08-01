@@ -4,6 +4,9 @@
 Wellness50 is a web application built wiht flask in python language, the web app is a simple task manager with tasks suggestions to add and complete as you go on about your day, a daily quote tab and a diary for you to register any information about your day that you deem necessary. The app has a log in and register feature that were repurposed from the finance PSET, and the UI has a friendly aesthetic in mind as to make the user as comfortable as possible.
 
 
+### How to run
+While having python and flask installed, download the files to your computer and from the main folder of the project type "flask run", this should create a local instance of the website in your computer
+
 ### Files and functions
 ### app.py
 app.py is the center of the program, with all the important functions that make a the web application open in the first place, most of the magic is done with flask that enables my python code to process and send in back to the HTML information. Down bellow i'm going to be listing some of the most interesting functions and others elements of my code that might be of interest.
