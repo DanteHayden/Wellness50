@@ -5,7 +5,7 @@ Wellness50 is a web application built wiht flask in python language, the web app
 
 
 ### How to run
-To run this project you will need python, pip and flask installed, for python just follow through with this download link: https://www.python.org/downloads/ for the latest version, usually pip is automatically installed with the latest vesrion of Python, so no need to worries about that, on a command prompt type "pip install flask" and you should be set to download Wellness50 files to your computer, from the main folder of the project type "flask run", this should create a local instance of the website in your computer, and that's it!
+To run this project you will need python, pip and flask installed, for python just follow through with this download link: https://www.python.org/downloads/ and look for the version 3.11.3, released on april of 2023, usually pip is automatically installed with this vesrion of Python, so no need to worries about that, on a command prompt type "pip install flask" and you should be set to download Wellness50 files to your computer, from the main folder of the project type "flask run", this should create a local instance of the website in your computer, and that's it!
 
 ### Files and functions
 ### app.py
