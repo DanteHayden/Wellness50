@@ -6,7 +6,6 @@ from flask_session import Session
 from tempfile import mkdtemp
 import random
 from helpers import apology, login_required
-import time
 
 ''' 
 Initializes all the nedeed applications to run my code on the top 
