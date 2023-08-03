@@ -10,6 +10,8 @@
 body {
     background-color: rgb(26, 30, 37);
     color: #9b9d9e;
+    overflow: hidden; /* Hide scrollbars */
+      
 }
 
 thead {
@@ -97,7 +99,9 @@ nav .navbar-brand .green
     }
   }
 
-/* idea adapted from hyperplexed https://codepen.io/Hyperplexed/pen/KKBjvbG */
+/* idea adapted from hyperplexed https://codepen.io/Hyperplexed/pen/KKBjvbG 
+this is a huge square with a soft gradient fill that slowly rotates, 
+creating a dynamic background for the application */
 
 #background-ball {
     background-color: white;

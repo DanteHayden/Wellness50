@@ -1,4 +1,3 @@
-import os
 import datetime
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, Response
@@ -113,6 +112,7 @@ def taskmaker():
     return taskVisualizer()
 
 
+# Deletes a task from the DB
 @app.route("/deleteTask", methods=["GET", "POST"])
 def taskDeleter():
     if request.method == "POST":
@@ -135,6 +135,7 @@ def taskVisualizer():
             task["complete"] = "Completed!"
     return render_template("taskManager.html", tasks = tasks, taskSuggestion = taskSuggestion)
 
+
 # Completes a single task
 @app.route("/completeTask", methods=["GET", "POST"])
 def completeTask():
@@ -144,6 +145,7 @@ def completeTask():
         db.execute("UPDATE tasks SET complete = 1 WHERE userId = ? AND task = ?;", session["user_id"], request.form.get("confirm-task"))
         return taskVisualizer()
     return taskVisualizer()
+
 
 # Reset all existing tasks to not completed yet
 @app.route("/resetTask", methods=["GET", "POST"])
